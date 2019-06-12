@@ -1,14 +1,13 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% DOCUMENT PREAMBLE %%%
+
+
+
 \documentclass[12pt]{report}
 \usepackage[english]{babel}
-%\usepackage{natbib}
-\usepackage{url}
 \usepackage{amsmath}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\graphicspath{{images/}}
+\graphicspath{{.images/}}
 \usepackage{parskip}
 \usepackage{fancyhdr}
 \usepackage{vmargin}
@@ -19,13 +18,10 @@
 % Title
 \author{ Kavi Chapagain}						
 % Author
-\date{Experiment 3}
-% Date
 
 \makeatletter
 \let\thetitle\@title
 \let\theauthor\@author
-\let\thedate\@date
 \makeatother
 
 \pagestyle{fancy}
@@ -41,8 +37,8 @@
 \begin{titlepage}
 	\centering
     \vspace*{0.5 cm}
-   % \includegraphics[scale = 0.075]{bsulogo.png}\\[1.0 cm]	% University Logo
-\begin{center}    \textsc{\Large   Modern Physics}\\[2.0 cm]	\end{center}% University Name
+    
+\begin{center}    \textsc{\Large   Modern Physics}\\[2.0 cm]	\end{center}
 	\textsc{\Large PEN231  }\\[0.5 cm]				% Course Code
 	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
 	{ \huge \bfseries \thetitle}\\
@@ -50,19 +46,12 @@
 	
 	\begin{minipage}{0.4\textwidth}
 		\begin{flushleft} \large
-		%	\emph{Submitted To:}\\
-		%	Name\\
-          % Affiliation\\
-           %contact info\\
 			\end{flushleft}
 			\end{minipage}~
 			\begin{minipage}{0.4\textwidth}
-            
 			\begin{flushright} \large
-			\emph{Submitted By :} \\
-			Kavi Chapagain  
+			\emph{Submitted By :} \\Kavi Chapagain 
 		\end{flushright}
-           
 	\end{minipage}\\[2 cm]
 	
     
@@ -70,21 +59,20 @@
 	
 \end{titlepage}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tableofcontents
 \pagebreak
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \renewcommand{\thesection}{\arabic{section}}
 \section{Introduction}
 
-Quantum Dots are the real world particle in a box. They are the nanoparticles in which a a particular colour is observed when illuminated by the light. It has a lot of applications ranging from using in a solar cells to the quantum screen used in computer/TV screens.
-\newline In this experiment we are determining the size of a Quantum Dot. First the formula for three dimensional energy equation is derived then the size of the Quantum Dot is determined.
+Quantum Dots are the real world particle in a box. They are the nanoparticles in which a particular colour is observed when illuminated by the light. It has a lot of applications ranging from using in solar cells to the quantum screen used in computer/TV screens.
+\newline In this experiment, we will experimentally determine the size of a Quantum Dot. First, an energy equation for a one-dimensional particle in a box is derived, then in the experimental section the size of the Quantum Dots is determined.
 
 
 \section{Theory}
-In 1925 Austrian Physicist Erwin Shrondinger introduced the wave equation, named after him Shrondinger Equation. The equation is:
+In 1925 Austrian Physicist Erwin Schrodinger introduced the wave equation, named after him Schrodinger Equation. The equation is:
 \begin{equation}
     \hatH \Psi = E \Psi          
 \end{equation}
@@ -177,9 +165,9 @@ The following values are available:
 \newline
 $E_g = 2.15 \times 10^-19$ J
 \newline
-$E_g = 7.29 \times 10^-32$ kg
+$m_e = 7.29 \times 10^-32$ kg
 \newline
-$E_g = 5.47 \times 10^-31$ kg
+$m_h = 5.47 \times 10^-31$ kg
 
 Similarly, in the experiment, the wavelength of the light from the Quantum Dots is measured and the zero-point energy is calculated by using
 \begin{equation}
@@ -189,51 +177,95 @@ where E, h, f, c and $\lambda$ are is the energy, Plank's constant(6.625$\times 
 
 
 \section{Experiment}
-The experiment is conducted to determine the radii of four different size of Quantum Dots. The four quantum dots were in a different solution of different colour, red, orange, yellow and green. A clamp was set to hold the solution and were exposed with 400nm LED light. Then the data was collected by using spectrometer sensor and a computer program Data Logger.
+
+The experiment is conducted to determine the radii of four different size of Quantum Dots. The four quantum dots were in a  solution of a different colour, red, orange, yellow and green. A clamp was set to hold the solution and was exposed with 400nm LED light. Then the data was collected by using a spectrometer sensor and a computer program Data Logger. The wavelength of the four solutions is shown in the Table \ref{tbl:wl}.
 \newline
-table
-\begin{center}
-\begin{tabular}{ |c c c| } 
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|}
 \hline
- \# & Colour & $\lambda(nm)$\\
-\hline
-1 & Red & 612.7\\
-2 & Orange & 592.2 \\ 
-3 & Yellow & 565.7 \\ 
-4 & Green & 537.1 \\ 
-\hline
+\textbf{\#} & \textbf{Colour} & \textbf{$\lambda(nm)$} \\ \hline
+1          & Red             & 624.7                  \\ \hline
+2          & Orange          & 592.2                  \\ \hline
+3          & Yellow          & 565.7                  \\ \hline
+4          & Green           & 537.1                  \\ \hline
 \end{tabular}
-\end{center}
+\caption{Experimentally Recorded Wavelength of Each Solution }
+\label{tbl:wl}
+\end{table}
 
 
 \section{Analysis}
 
+
+The energy of the quantum dots is given by Equation 21 and Equation 20, combining both we get
+\begin{equation}
+    E = \frac{\hbar^2 \pi^2}{2m_eR^2} + \frac{\hbar^2 \pi^2}{2m_hR^2} + E_g 
+\end{equation}
+or,
+\begin{equation*}
+    E - E_g  = \frac{\hbar^2 \pi^2}{2R^2} (\frac{1}{m_e} + \frac{1}{m_h}) 
+\end{equation*}
+\begin{equation*}
+    R^2 =   \frac{\hbar^2 \pi^2}{2} (\frac{1}{m_e} + \frac{1}{m_h}) \times \frac{1}{E - E_g}
+\end{equation*}
+Substituting the values of $\hbar,$ $\pi,$ $m_e$, and  $m_h$, we get
+\begin{equation}
+    R =   9.20\times  10^{-19} \sqrt{\frac{1}{\frac{hc}{\lambda} - E_g}}
+\end{equation}
+
+So, the calculated values of the experimental radius of quantum dots from the Equation 23 is shown in Table \ref{tbl:radius}.
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|l|}
+\hline
+\textbf{\#} & \textbf{Colour} & \textbf{Radius (nm)}  \\ \hline
+1          & Red             & 2.86                   \\ \hline
+2          & Orange          & 2.64                \\ \hline
+3          & Yellow          & 2.49                \\ \hline
+4          & Green           & 2.33                 \\ \hline
+\end{tabular}
+\caption{Calculated Radius and Percentage Uncertainty }
+\label{tbl:radius}
+\end{table}
+
+The accepted value with the percentage uncertainty is shown in the Table \ref{tbl:uncertain}. The experimental value is 1-3\% variant from the accepted radius.
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|l|l|}
+\hline
+\textbf{\#} & \textbf{Colour} & \textbf{\begin{tabular}[c]{@{}c@{}}Experimental\\ Radius (nm)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Accepted \\ Radius (nm)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Percentage \\ Error (\%)\end{tabular}} \\ \hline
+1           & Red             & 2.86                                                                          & 2.92                                                                        & 2.05                                                                           \\ \hline
+2           & Orange          & 2.64                                                                       & 2.71                                                                        & 2.58                                                                           \\ \hline
+3           & Yellow          & 2.49                                                                       & 2.53                                                                        & 1.58                                                                           \\ \hline
+4           & Green           & 2.33                                                                       & 2.37                                                                        & 1.69                                                                           \\ \hline
+\end{tabular}
+\caption{Accepted Value and Percentage Error }
+\label{tbl:uncertain}
+\end{table}
+
+The plot of quantum dot radius vs. the emitted wavelength is shown in Fig \ref{fig:qd_plot}. It shows the radius of a quantum dot is directly proportional to the emitted wavelength and tries to show a linear relationship. The gradient of 0.006 is also observed, which is seen as a gradual positive increment of the radius with respect to wavelength in the graph.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth] {images/r-w}
+    \caption{Quantum dot radius vs. Emitted wavelength}
+    \label{fig:qd_plot}
+\end{figure}
+    
 \section{Conclusion}
-
-
-
-
-
+In this experiment, we determined the size of a Quantum Dot using the wavelength emitted by the containing solution. The values recorded are shown in Table \ref{tbl:wl}. The percent error between the experimental radius and the accepted radius was less than 2.60\%.  \\
+The noise on the data can be reduced by conducting the experiment in a dark room, switching off the lights.
 
  
-\begin{thebibliography}{111}
+\begin{thebibliography}{9}
    
-  \bibitem{ACMT}
-A. Aldroubi, C. Cabrelli, U. Molter, and Sui Tang,
-Dynamical sampling, 
-{\it  Applied and Computational Harmonic Analysis}, doi:10.1016/j.acha.2015.08.014, 2016
-
-%if the "underfill \hbox" warning bothers you uncomment the following line
-%\raggedright
-\bibitem{ACAMP}
-    A. Aldroubi, C. Cabrelli, A. F. Cakmak, U. Molter,  and A. Petrosyan,
-    Iterative actions of normal operators, 
-    Submitted. Available at http://arxiv.org/abs/1602.04527.
   
-\bibitem{Gro01} 
-    K. Groechenig,
-    {\it Foundations of time-frequency analysis}, 
-    Birkh\"auser Boston, 2001.
+\bibitem{b1} 
+   Experiment Guide, Operating Instructions: 1751-18 CENCO Quantum Dots, Nanosys
 
 \end{thebibliography}
 \end{document}
